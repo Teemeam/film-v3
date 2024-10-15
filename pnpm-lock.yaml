@@ -13,7 +13,7 @@ importers:
         version: 0.9.3(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.5.4)
       astro:
         specifier: ^4.15.4
-        version: 4.15.4(rollup@4.21.2)(typescript@5.5.4)
+        version: 4.15.4(@types/node@22.7.5)(rollup@4.21.2)(typescript@5.5.4)
       cloudinary:
         specifier: ^2.4.0
         version: 2.4.0
@@ -24,6 +24,12 @@ importers:
         specifier: ^5.5.4
         version: 5.5.4
     devDependencies:
+      '@types/node':
+        specifier: ^22.7.5
+        version: 22.7.5
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
@@ -601,6 +607,9 @@ packages:
   '@types/nlcst@2.0.3':
     resolution: {integrity: sha512-vSYNSDe6Ix3q+6Z7ri9lyWqgGhJTmzRjZRqyq15N0Z/1/UnVsno9G/N40NBijoYx2seFDIl0+B2mgAb9mezUCA==}
 
+  '@types/node@22.7.5':
+    resolution: {integrity: sha512-jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==}
+
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
 
@@ -845,6 +854,10 @@ packages:
 
   dlv@1.1.3:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
+
+  dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
 
   dset@3.1.3:
     resolution: {integrity: sha512-20TuZZHCEZ2O71q9/+8BwKwZ0QtD9D8ObhrihJPr+vLLYlSuAU3/zL4cSlgbfeoGHTjCSJBa7NGcrF9/Bx/WJQ==}
@@ -1692,6 +1705,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
 
@@ -2498,6 +2514,10 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
+  '@types/node@22.7.5':
+    dependencies:
+      undici-types: 6.19.8
+
   '@types/unist@3.0.3': {}
 
   '@ungap/structured-clone@1.2.0': {}
@@ -2596,7 +2616,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@4.15.4(rollup@4.21.2)(typescript@5.5.4):
+  astro@4.15.4(@types/node@22.7.5)(rollup@4.21.2)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -2656,8 +2676,8 @@ snapshots:
       tsconfck: 3.1.3(typescript@5.5.4)
       unist-util-visit: 5.0.0
       vfile: 6.0.3
-      vite: 5.4.3
-      vitefu: 1.0.2(vite@5.4.3)
+      vite: 5.4.3(@types/node@22.7.5)
+      vitefu: 1.0.2(vite@5.4.3(@types/node@22.7.5))
       which-pm: 3.0.0
       xxhash-wasm: 1.0.2
       yargs-parser: 21.1.1
@@ -2824,6 +2844,8 @@ snapshots:
   diff@5.2.0: {}
 
   dlv@1.1.3: {}
+
+  dotenv@16.4.5: {}
 
   dset@3.1.3: {}
 
@@ -3873,6 +3895,8 @@ snapshots:
 
   typescript@5.5.4: {}
 
+  undici-types@6.19.8: {}
+
   unified@11.0.5:
     dependencies:
       '@types/unist': 3.0.3
@@ -3946,17 +3970,18 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@5.4.3:
+  vite@5.4.3(@types/node@22.7.5):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.45
       rollup: 4.21.2
     optionalDependencies:
+      '@types/node': 22.7.5
       fsevents: 2.3.3
 
-  vitefu@1.0.2(vite@5.4.3):
+  vitefu@1.0.2(vite@5.4.3(@types/node@22.7.5)):
     optionalDependencies:
-      vite: 5.4.3
+      vite: 5.4.3(@types/node@22.7.5)
 
   volar-service-css@0.0.61(@volar/language-service@2.4.4):
     dependencies:

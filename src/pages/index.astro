@@ -1,19 +1,62 @@
 ---
-// import { fetchImages } from '../lib/cloudinary.ts';
+import { createFlickr, FetchTransport } from 'flickr-sdk';
+import { getOriginalWidth, getOriginalHeight } from '../lib/getOriginalDimensions';
 
-// const images = await fetchImages();
+const oauthConfig = {
+  consumerKey: import.meta.env.SECRET_FLICKR_CONSUMER_KEY,
+  consumerSecret: import.meta.env.SECRET_FLICKR_CONSUMER_SECRET,
+  oauthToken: import.meta.env.SECRET_OAUTH_TOKEN,
+  oauthTokenSecret: import.meta.env.SECRET_OAUTH_TOKEN_SECRET,
+};
 
-import { createFlickr } from 'flickr-sdk';
+const transport = new FetchTransport();
 
-const { flickr } = createFlickr('5eb244406a33d48b10c1123269a7f5eb');
+const flickr = createFlickr(oauthConfig, transport);
 
-const res = await flickr('flickr.photosets.getPhotos', {
+const response = await flickr.flickr('flickr.photosets.getPhotos', {
   photoset_id: '72157718780020052',
   user_id: '134442412@N06',
   privacy_filter: '5',
 });
 
-console.log(res);
+const photos: Photo[] = await response.photoset.photo;
+
+const completeData: CompleteData[] = [];
+
+await Promise.all(
+  photos.map(async (photo: Photo) => {
+    /**
+     * Fetch info
+     */
+    const infoResponse = await flickr.flickr('flickr.photos.getInfo', {
+      photo_id: photo.id,
+    });
+    const infoData: InfoData = await infoResponse;
+
+    /**
+     * Fetch sizes
+     */
+    const sizeResponse = await flickr.flickr('flickr.photos.getSizes', {
+      photo_id: photo.id,
+    });
+    const sizeData: SizeData = await sizeResponse;
+
+    const sizes: Size[] = sizeData.sizes.size;
+
+    /**
+     * Complete data
+     */
+    const width = getOriginalWidth(sizes);
+    const height = getOriginalHeight(sizes);
+
+    const data: CompleteData = {
+      ...infoData,
+      aspectRatio: typeof width === 'number' && typeof height === 'number' ? width / height : 1,
+    };
+
+    completeData.push(data);
+  })
+);
 ---
 
 <html lang='en'>
@@ -26,6 +69,11 @@ console.log(res);
   </head>
   <body>
     <h1>Astro</h1>
-    <p>{JSON.stringify(res)}</p>
+
+    <p>{JSON.stringify(completeData)}</p>
+
+    {completeData.map((dataItem) => {
+      return (<p>{`https://live.staticflickr.com/${dataItem.photo.server}/${dataItem.photo.id}_${dataItem.photo.originalsecret}_h.jpg`}</p>);
+    })}
   </body>
 </html>
