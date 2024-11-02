@@ -1,0 +1,19 @@
+---
+import '@fontsource-variable/montserrat';
+import '../styles.css';
+
+/* Components */
+import BaseHead from '../components/BaseHead.astro';
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={title} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

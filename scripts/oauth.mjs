@@ -4,9 +4,8 @@ import { resolve } from 'node:path';
 import { readFileSync } from 'node:fs';
 import { createServer } from 'node:https';
 import { ok } from 'node:assert';
-import dotenv from 'dotenv';
 
-// load environment variables from a .env file
+import dotenv from 'dotenv';
 dotenv.config();
 
 /**
@@ -18,11 +17,11 @@ dotenv.config();
 // users will authorize your app to make calls to the api on their behalf.
 // https://www.flickr.com/services/apps/create/apply/?
 
-ok(process.env.FLICKR_CONSUMER_KEY, 'missing FLICKR_CONSUMER_KEY environment variable');
-ok(process.env.FLICKR_CONSUMER_SECRET, 'missing FLICKR_CONSUMER_SECRET environment variable');
+ok(process.env.CONSUMER_KEY, 'missing CONSUMER_KEY environment variable');
+ok(process.env.CONSUMER_SECRET, 'missing CONSUMER_SECRET environment variable');
 
-const consumerKey = process.env.FLICKR_CONSUMER_KEY;
-const consumerSecret = process.env.FLICKR_CONSUMER_SECRET;
+const consumerKey = process.env.CONSUMER_KEY;
+const consumerSecret = process.env.CONSUMER_SECRET;
 
 // your application will need some sort of database to store request
 // tokens and oauth tokens for the user. you should use an actual
@@ -127,14 +126,14 @@ async function verifyRequestToken(req, res, searchParams) {
 // read the ssl cert and key from disk
 function getcert(filename) {
   try {
-    return readFileSync(resolve('src/lib', filename));
+    return readFileSync(resolve('scripts', filename));
   } catch (err) {
     err.message = `${err.message}
 
     OAuth callback URLs **must be https**, so this example's server needs an SSL cert to run.
     Generate a self-signed cert by running \`make\` in this directory:
 
-    $ cd ${resolve('src/lib')} && make
+    $ cd ${resolve('scripts')} && make
 `;
     throw err;
   }

@@ -1,6 +1,4 @@
 ---
-import fetchFlickrData from '~/lib/fetchFlickrData';
-
 /* Layouts */
 import Layout from '~/layouts/Layout.astro';
 
@@ -8,15 +6,13 @@ import Layout from '~/layouts/Layout.astro';
 import Nav from '~/components/Nav.astro';
 import Header from '~/components/Header.astro';
 import Footer from '~/components/Footer.astro';
-
-const formattedData = await fetchFlickrData();
 ---
 
-<Layout title='Teemu Kakko Film Photo Showcase'>
-  <main>
+<Layout title='Teemu Kakko Film Photo Showcase | Cameras'>
+  <section>
     <Header />
     <Nav />
-    <p>{JSON.stringify(formattedData)}</p>
+    <p>Cameras</p>
     <Footer />
-  </main>
+  </section>
 </Layout>
