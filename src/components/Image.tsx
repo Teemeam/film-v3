@@ -12,7 +12,7 @@ type Props = {
   data: FormattedData;
 };
 
-const Image: FC<Props> = ({ data }) => {
+export const Image: FC<Props> = ({ data }) => {
   const [isInView, setIsInView] = useState<boolean>(false);
 
   /**
@@ -33,24 +33,17 @@ const Image: FC<Props> = ({ data }) => {
 
   return (
     <div ref={imageRef} className='mb-5'>
-      <a
-        // href={data.flickrUrl}
-        target='_blank'
-        rel='noopener noreferrer'
-        aria-label='Open image on Flickr.'
-      >
-        <div className={`relative h-0 bg-neutral-100 pb-[${(100 / data.aspectRatio).toFixed(1)}%]`}>
-          {/**
-           * Blurhash image
-           */}
-          <BlurhashImage blurhash={data.blurhash} />
+      <div className={`relative h-0 bg-neutral-100 pb-[${(100 / data.aspectRatio).toFixed(1)}%]`}>
+        {/**
+         * Blurhash image
+         */}
+        <BlurhashImage blurhash={data.blurhash} />
 
-          {/**
-           * Full-size image
-           */}
-          <FullSizeImage isInView={isInView} url={data.url} />
-        </div>
-      </a>
+        {/**
+         * Full-size image
+         */}
+        <FullSizeImage isInView={isInView} url={data.url} />
+      </div>
 
       {/**
        * Caption
@@ -59,5 +52,3 @@ const Image: FC<Props> = ({ data }) => {
     </div>
   );
 };
-
-export default Image;

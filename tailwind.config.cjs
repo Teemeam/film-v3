@@ -11,11 +11,11 @@ module.exports = {
       colors: {
         green: {
           ...defaultTheme.colors.green,
-          900: '#001E1E',
+          900: '#001e1e',
         },
         orange: {
           ...defaultTheme.colors.orange,
-          900: '#FC6862',
+          900: '#fc6862',
         },
       },
       fontFamily: {

@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 /* Components */
-import Image from './Image';
+import { Image as ImageComponent } from './Image';
 
 /* Prop types */
 type Props = {
@@ -9,9 +9,9 @@ type Props = {
 };
 
 const Images: FC<Props> = ({ data }) => {
-  const images = data.map((dataItem, i) => <Image key={`image-_${i}`} data={dataItem} />);
+  const images = data.map((dataItem, i) => <ImageComponent key={`image_${i}`} data={dataItem} />);
 
-  return <div>{images}</div>;
+  return <div className='relative mx-auto block w-11/12 max-w-4xl'>{images}</div>;
 };
 
 export default Images;

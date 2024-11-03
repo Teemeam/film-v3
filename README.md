@@ -2,6 +2,8 @@
 
 Fetch photos from the Flickr API.
 
+![](sketch.svg)
+
 ## Used technologies
 
 - React 18
