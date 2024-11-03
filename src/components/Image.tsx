@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import { type FC, useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import 'intersection-observer';
 
@@ -7,12 +7,11 @@ import BlurhashImage from './BlurhashImage';
 import FullSizeImage from './FullSizeImage';
 import Caption from './Caption';
 
-/* Prop types */
 type Props = {
   data: FormattedData;
 };
 
-export const Image: FC<Props> = ({ data }) => {
+const Image: FC<Props> = ({ data }) => {
   const [isInView, setIsInView] = useState<boolean>(false);
 
   /**
@@ -25,15 +24,15 @@ export const Image: FC<Props> = ({ data }) => {
   /**
    * Update the state when the visibility changes
    */
-  if (inView !== isInView) {
-    if (inView) {
-      setIsInView(true);
+  useEffect(() => {
+    if (inView !== isInView) {
+      setIsInView(inView);
     }
-  }
+  }, [inView]);
 
   return (
     <div ref={imageRef} className='mb-5'>
-      <div className={`relative h-0 bg-neutral-100 pb-[${(100 / data.aspectRatio).toFixed(1)}%]`}>
+      <div className={`relative h-0 bg-neutral-200 pb-[${(100 / data.aspectRatio).toFixed(1)}%]`}>
         {/**
          * Blurhash image
          */}
@@ -52,3 +51,5 @@ export const Image: FC<Props> = ({ data }) => {
     </div>
   );
 };
+
+export default Image;

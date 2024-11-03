@@ -1,7 +1,6 @@
 import type { FC } from 'react';
 import { Blurhash } from 'react-blurhash';
 
-/* Prop types */
 type Props = {
   blurhash: string;
 };

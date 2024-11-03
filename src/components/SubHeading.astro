@@ -1,0 +1,18 @@
+---
+type Props = {
+  src: string;
+  alt: string;
+};
+
+const { src, alt } = Astro.props;
+---
+
+<div class='w-full bg-gradient-to-b from-neutral-100 to-white'>
+  <div class='py-md md:py-lg mx-auto w-10/12 max-w-xs'>
+    <div class='relative h-0 w-full pb-[35.6955229%]'>
+      <h2 class='absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2'>
+        <img class='block w-full' src={src} alt={alt} />
+      </h2>
+    </div>
+  </div>
+</div>

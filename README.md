@@ -18,3 +18,9 @@ Requires Node 20.
 ## Preparations
 
 Create a Flickr App and use the app key to fetch images from the Flickr API. Methods are listed [in the App Garden](https://www.flickr.com/services/api/).
+
+## Fonts
+
+- Headings: [Calligrapher.ai](https://www.calligrapher.ai/)
+
+- Body: Montserrat ([Fontsource](https://fontsource.org/fonts/montserrat))

@@ -1,7 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-
-/* Assets */
 import header from '~/assets/img/header1b.svg';
 ---
 
@@ -9,7 +6,7 @@ import header from '~/assets/img/header1b.svg';
   <div class='mx-auto w-10/12 max-w-xl pb-8 pt-10 md:pb-14 md:pt-20'>
     <div class='h-0 w-full pb-[20.370213%]'>
       <h1>
-        <Image class='block w-full' src={header} alt='Teemu Kakko Film Photo Showcase' />
+        <img class='block w-full' src={header.src} alt='Teemu Kakko Film Photo Showcase' />
       </h1>
     </div>
   </div>

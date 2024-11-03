@@ -9,17 +9,35 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        green: {
+        /* green: {
           ...defaultTheme.colors.green,
           900: '#001e1e',
         },
         orange: {
           ...defaultTheme.colors.orange,
           900: '#fc6862',
+        }, */
+        custom: {
+          100: '#e3e6e6',
+          200: '#c6cdcd',
+          300: '#aab4b4',
+          400: '#8e9b9b',
+          500: '#718282',
+          600: '#556969',
+          700: '#395050',
+          800: '#1c3737',
+          900: '#001e1e',
         },
       },
       fontFamily: {
         montserrat: ['Montserrat', ...defaultTheme.fontFamily.sans],
+      },
+      spacing: {
+        xs: '8px',
+        sm: '16px',
+        md: '24px',
+        lg: '32px',
+        xl: '48px',
       },
     },
   },

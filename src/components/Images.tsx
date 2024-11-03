@@ -1,17 +1,16 @@
 import type { FC } from 'react';
 
 /* Components */
-import { Image as ImageComponent } from './Image';
+import Image from './Image';
 
-/* Prop types */
 type Props = {
   data: FormattedData[];
 };
 
 const Images: FC<Props> = ({ data }) => {
-  const images = data.map((dataItem, i) => <ImageComponent key={`image_${i}`} data={dataItem} />);
+  const images = data.map((dataItem, i) => <Image key={`image_${i}`} data={dataItem} />);
 
-  return <div className='relative mx-auto block w-11/12 max-w-4xl'>{images}</div>;
+  return <div className='my-lg relative mx-auto block w-11/12 max-w-4xl'>{images}</div>;
 };
 
 export default Images;

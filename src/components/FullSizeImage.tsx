@@ -1,6 +1,5 @@
 import { type FC, useState } from 'react';
 
-/* Prop types */
 type Props = {
   isInView: boolean;
   url: string;
