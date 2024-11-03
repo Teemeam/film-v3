@@ -5,8 +5,10 @@ import fetchFlickrData from '~/lib/fetchFlickrData';
 import Layout from '~/layouts/Layout.astro';
 
 /* Components */
-import Nav from '~/components/Nav.astro';
 import Header from '~/components/Header.astro';
+import Nav from '~/components/Nav.astro';
+import Featured from '~/components/Featured.astro';
+import Images from '~/components/Images';
 import Footer from '~/components/Footer.astro';
 
 const formattedData = await fetchFlickrData();
@@ -16,7 +18,8 @@ const formattedData = await fetchFlickrData();
   <main>
     <Header />
     <Nav />
-    <p>{JSON.stringify(formattedData)}</p>
+    <Featured />
+    <Images data={formattedData} />
     <Footer />
   </main>
 </Layout>
