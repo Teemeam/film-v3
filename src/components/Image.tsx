@@ -31,23 +31,30 @@ const Image: FC<Props> = ({ data }) => {
   }, [inView]);
 
   return (
-    <div ref={imageRef} className='mb-5'>
-      <div className={`relative h-0 bg-neutral-200 pb-[${(100 / data.aspectRatio).toFixed(1)}%]`}>
-        {/**
-         * Blurhash image
-         */}
-        <BlurhashImage blurhash={data.blurhash} />
+    <div
+      ref={imageRef}
+      className='mb-3xl flex flex-col items-center justify-center gap-lg md:flex-row'
+    >
+      <div className='relative w-full md:w-7/12'>
+        <div
+          className={`relative h-0 w-full bg-neutral-200 pb-[${(100 / data.aspectRatio).toFixed(1)}%]`}
+        >
+          {/**
+           * Blurhash image
+           */}
+          <BlurhashImage blurhash={data.blurhash} />
 
-        {/**
-         * Full-size image
-         */}
-        <FullSizeImage isInView={isInView} url={data.url} />
+          {/**
+           * Full-size image
+           */}
+          <FullSizeImage isInView={isInView} url={data.url} />
+        </div>
       </div>
 
       {/**
        * Caption
        */}
-      <Caption description={data.description} />
+      <Caption description={data.description} dateLabel={data.dateLabel} />
     </div>
   );
 };

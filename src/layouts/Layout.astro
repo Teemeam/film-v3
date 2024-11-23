@@ -16,10 +16,10 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang='en'>
   <head>
-    <ViewTransitions fallback='none' />
+    <ViewTransitions fallback='swap' />
     <BaseHead title={title} />
   </head>
-  <body>
+  <body class='bg-gradient-to-b from-neutral-100 from-[100lvh] to-white to-[300lvh]'>
     <slot />
   </body>
 </html>
