@@ -11,6 +11,12 @@ Fetch photos from the Flickr API.
 - [Astro](https://astro.build/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
+## To-do
+
+- Style menu buttons
+- Camera page
+- Share image
+
 ## Requirements
 
 Requires Node 20.

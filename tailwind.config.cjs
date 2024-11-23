@@ -8,19 +8,6 @@ module.exports = {
   safelist: [...[...Array(2000).keys()].flatMap((i) => [`pb-[${((i + 1) * 0.1).toFixed(1)}%]`])],
   theme: {
     extend: {
-      colors: {
-        custom: {
-          100: '#e3e6e6',
-          200: '#c6cdcd',
-          300: '#aab4b4',
-          400: '#8e9b9b',
-          500: '#718282',
-          600: '#556969',
-          700: '#395050',
-          800: '#1c3737',
-          900: '#001e1e',
-        },
-      },
       fontFamily: {
         montserrat: ['Montserrat\\ Variable', 'ui-sans-serif', ...defaultTheme.fontFamily.sans],
       },

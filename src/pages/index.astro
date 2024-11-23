@@ -18,20 +18,26 @@ const formattedData = await fetchFlickrData();
 ---
 
 <Layout title='Teemu Kakko Film Photo Showcase'>
-  <main>
-    <!-- Header -->
+  <!-- Header -->
+  <header>
     <Header />
+  </header>
 
-    <!-- Navigation -->
-    <Nav />
+  <!-- Navigation -->
+  <Nav />
 
-    <!-- Sub-heading -->
-    <SubHeading src={subheading.src} alt='Photos' />
+  <main>
+    <section>
+      <!-- Sub-heading -->
+      <SubHeading src={subheading.src} alt='Photos' />
 
-    <!-- Images -->
-    <Images client:load data={formattedData} />
-
-    <!-- Footer -->
-    <Footer />
+      <!-- Images -->
+      <Images client:load data={formattedData} />
+    </section>
   </main>
+
+  <!-- Footer -->
+  <footer>
+    <Footer />
+  </footer>
 </Layout>

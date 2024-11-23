@@ -85,7 +85,7 @@ const fetchFlickrData = async () => {
 
       formattedData.push({
         id: photo.id,
-        url: `${urlBase}_h.jpg`,
+        url: `${urlBase}_k.jpg`,
         blurhash: blurhash.encoded,
         tags: getTags(photo.tags),
         description: formatDescription(photo.description._content),
