@@ -1,6 +1,5 @@
 import { type FC, useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import 'intersection-observer';
 
 /* Components */
 import BlurhashImage from './BlurhashImage';
@@ -18,7 +17,7 @@ const Image: FC<Props> = ({ data }) => {
    * Determine if the image is in the viewport
    */
   const [imageRef, inView] = useInView({
-    threshold: 0,
+    threshold: 0.2,
   });
 
   /**
@@ -26,7 +25,9 @@ const Image: FC<Props> = ({ data }) => {
    */
   useEffect(() => {
     if (inView !== isInView) {
-      setIsInView(inView);
+      if (inView) {
+        setIsInView(true);
+      }
     }
   }, [inView]);
 

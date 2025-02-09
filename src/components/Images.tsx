@@ -1,6 +1,5 @@
 import { type FC, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import 'intersection-observer';
 
 /* Components */
 import Image from './Image';

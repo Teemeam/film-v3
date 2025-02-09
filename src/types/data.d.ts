@@ -35,3 +35,11 @@ type MyTag = {
   label: string;
   value: string;
 };
+
+/**
+ * Camera
+ */
+type Camera = {
+  name: string;
+  src: ImageMetadata;
+};

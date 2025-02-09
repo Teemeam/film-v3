@@ -20,7 +20,7 @@ const Menu: FC<Props> = ({ selected, handleClick, handleReset }) => {
           {/**
            * Film buttons
            */}
-          <div className='my-sm'>
+          <div className='my-base'>
             {tags[0]?.map((tag, i) => (
               <MenuButton
                 key={`f-button_${i}`}
@@ -34,7 +34,7 @@ const Menu: FC<Props> = ({ selected, handleClick, handleReset }) => {
           {/**
            * Camera buttons
            */}
-          <div className='my-sm'>
+          <div className='my-base'>
             {tags[1]?.map((tag, i) => (
               <MenuButton
                 key={`c-button_${i}`}
@@ -48,9 +48,9 @@ const Menu: FC<Props> = ({ selected, handleClick, handleReset }) => {
           {/**
            * Reset button
            */}
-          <div className='my-sm'>
+          <div className='my-base'>
             <button
-              className='rounded-3xl bg-neutral-300 px-5 py-2.5 font-montserrat text-xs font-light text-green-900 hover:bg-neutral-400 sm:text-sm md:text-base'
+              className='m-1 rounded-lg border-2 border-black px-3 py-1 font-montserrat text-xs md:text-base'
               onClick={() => handleReset()}
             >
               Reset

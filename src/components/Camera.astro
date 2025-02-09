@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+
+type Props = {
+  index: number;
+  camera: Camera;
+};
+
+const { index, camera } = Astro.props;
+---
+
+{
+  index % 2 ? (
+    <div class='mb-3xl flex flex-col-reverse md:flex-row items-center justify-center gap-lg'>
+      <div class='w-11/12 md:w-5/12'>
+        <div class='mx-auto w-full md:w-11/12'>
+          <p class='mb-1 text-center font-montserrat text-sm font-medium'>{camera.name}</p>
+        </div>
+      </div>
+
+      <div class='relative w-full md:w-7/12'>
+        <Image src={camera.src} alt={camera.name} />
+      </div>
+    </div>
+  ) : (
+    <div class='mb-3xl flex flex-col items-center justify-center gap-lg md:flex-row'>
+      <div class='relative w-full md:w-7/12'>
+        <Image src={camera.src} alt={camera.name} />
+      </div>
+
+      <div class='w-11/12 md:w-5/12'>
+        <div class='mx-auto w-full md:w-11/12'>
+          <p class='mb-1 text-center font-montserrat text-sm font-medium'>{camera.name}</p>
+        </div>
+      </div>
+    </div>
+  )
+}

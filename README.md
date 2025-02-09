@@ -16,6 +16,7 @@ Fetch photos from the Flickr API.
 - Style menu buttons
 - Camera page
 - Share image
+- Font sizes
 
 ## Requirements
 
