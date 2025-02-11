@@ -52,7 +52,7 @@ const Menu: FC<Props> = ({ selected, handleClick, handleReset }) => {
            */}
           <div className='my-base'>
             <button
-              className='m-1 rounded-lg border-2 border-black px-3 py-1 font-montserrat text-sm md:text-base'
+              className='m-1 rounded-lg border-2 border-black px-3 py-1 font-montserrat text-sm'
               onClick={() => handleReset()}
             >
               Reset
