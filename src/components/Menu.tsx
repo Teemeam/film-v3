@@ -15,7 +15,9 @@ const Menu: FC<Props> = ({ selected, handleClick, handleReset }) => {
     <div className='my-xl w-full text-center'>
       <div className='mx-auto w-11/12'>
         <details>
-          <summary className='cursor-pointer font-montserrat font-medium'>Filter</summary>
+          <summary className='mx-auto w-fit cursor-pointer font-montserrat font-medium'>
+            Filter
+          </summary>
 
           {/**
            * Film buttons
@@ -50,7 +52,7 @@ const Menu: FC<Props> = ({ selected, handleClick, handleReset }) => {
            */}
           <div className='my-base'>
             <button
-              className='m-1 rounded-lg border-2 border-black px-3 py-1 font-montserrat text-xs md:text-base'
+              className='m-1 rounded-lg border-2 border-black px-3 py-1 font-montserrat text-sm md:text-base'
               onClick={() => handleReset()}
             >
               Reset
