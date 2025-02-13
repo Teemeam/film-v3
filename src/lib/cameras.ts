@@ -15,6 +15,15 @@ const cameras: Camera[] = [
     name: 'Polaroid SX-70',
     src: sx70,
   },
+  {
+    name: 'Canon AV-1',
+  },
+  {
+    name: 'Agfa Synchro Box',
+  },
+  {
+    name: 'Pingo',
+  },
 ];
 
 export default cameras;

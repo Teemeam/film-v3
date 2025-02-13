@@ -11,7 +11,7 @@ const { index, camera } = Astro.props;
 
 {
   index % 2 ? (
-    <div class='mb-3xl flex flex-col-reverse md:flex-row items-center justify-center gap-lg'>
+    <div class='mb-3xl flex flex-col-reverse items-center justify-center gap-lg md:flex-row'>
       <div class='w-11/12 md:w-5/12'>
         <div class='mx-auto w-full md:w-11/12'>
           <p class='mb-1 text-center font-montserrat font-medium'>{camera.name}</p>
@@ -19,13 +19,13 @@ const { index, camera } = Astro.props;
       </div>
 
       <div class='relative w-full md:w-7/12'>
-        <Image src={camera.src} alt={camera.name} />
+        {camera.src ? <Image src={camera.src} alt={camera.name} /> : <div class='block w-full h-0 pb-[66%] bg-neutral-200' />}
       </div>
     </div>
   ) : (
     <div class='mb-3xl flex flex-col items-center justify-center gap-lg md:flex-row'>
       <div class='relative w-full md:w-7/12'>
-        <Image src={camera.src} alt={camera.name} />
+        {camera.src ? <Image src={camera.src} alt={camera.name} /> : <div class='block w-full h-0 pb-[66%] bg-neutral-200' />}
       </div>
 
       <div class='w-11/12 md:w-5/12'>
