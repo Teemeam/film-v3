@@ -41,5 +41,5 @@ type MyTag = {
  */
 type Camera = {
   name: string;
-  src?: ImageMetadata;
+  image?: ImageMetadata;
 };

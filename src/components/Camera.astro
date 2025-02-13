@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-
 type Props = {
   index: number;
   camera: Camera;
@@ -19,13 +17,21 @@ const { index, camera } = Astro.props;
       </div>
 
       <div class='relative w-full md:w-7/12'>
-        {camera.src ? <Image src={camera.src} alt={camera.name} /> : <div class='block w-full h-0 pb-[66%] bg-neutral-200' />}
+        {camera.image ? (
+          <img src={camera.image.src} alt={camera.name} />
+        ) : (
+          <div class='block h-0 w-full bg-neutral-200 pb-[66%]' />
+        )}
       </div>
     </div>
   ) : (
     <div class='mb-3xl flex flex-col items-center justify-center gap-lg md:flex-row'>
       <div class='relative w-full md:w-7/12'>
-        {camera.src ? <Image src={camera.src} alt={camera.name} /> : <div class='block w-full h-0 pb-[66%] bg-neutral-200' />}
+        {camera.image ? (
+          <img src={camera.image.src} alt={camera.name} />
+        ) : (
+          <div class='block h-0 w-full bg-neutral-200 pb-[66%]' />
+        )}
       </div>
 
       <div class='w-11/12 md:w-5/12'>
