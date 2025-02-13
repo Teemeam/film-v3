@@ -17,11 +17,11 @@ dotenv.config();
 // users will authorize your app to make calls to the api on their behalf.
 // https://www.flickr.com/services/apps/create/apply/?
 
-ok(process.env.CONSUMER_KEY, 'missing CONSUMER_KEY environment variable');
-ok(process.env.CONSUMER_SECRET, 'missing CONSUMER_SECRET environment variable');
+ok(process.env.FLICKR_CONSUMER_KEY, 'missing CONSUMER_KEY environment variable');
+ok(process.env.FLICKR_CONSUMER_SECRET, 'missing CONSUMER_SECRET environment variable');
 
-const consumerKey = process.env.CONSUMER_KEY;
-const consumerSecret = process.env.CONSUMER_SECRET;
+const consumerKey = process.env.FLICKR_CONSUMER_KEY;
+const consumerSecret = process.env.FLICKR_CONSUMER_SECRET;
 
 // your application will need some sort of database to store request
 // tokens and oauth tokens for the user. you should use an actual
