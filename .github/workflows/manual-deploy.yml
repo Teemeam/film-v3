@@ -22,12 +22,12 @@ jobs:
           node-version: '18.x'
           package-manager: 'pnpm@8'
         env:
-          CONSUMER_KEY: ${{ secrets.FLICKR_CONSUMER_KEY }}
-          CONSUMER_SECRET: ${{ secrets.FLICKR_CONSUMER_SECRET }}
-          OAUTH_TOKEN: ${{ secrets.FLICKR_OAUTH_TOKEN }}
-          OAUTH_TOKEN_SECRET: ${{ secrets.FLICKR_OAUTH_TOKEN_SECRET }}
-          PHOTOSET_ID: ${{ secrets.FLICKR_PHOTOSET_ID }}
-          USER_ID: ${{ secrets.FLICKR_USER_ID }}
+          FLICKR_CONSUMER_KEY: ${{ secrets.FLICKR_CONSUMER_KEY }}
+          FLICKR_CONSUMER_SECRET: ${{ secrets.FLICKR_CONSUMER_SECRET }}
+          FLICKR_OAUTH_TOKEN: ${{ secrets.FLICKR_OAUTH_TOKEN }}
+          FLICKR_OAUTH_TOKEN_SECRET: ${{ secrets.FLICKR_OAUTH_TOKEN_SECRET }}
+          FLICKR_PHOTOSET_ID: ${{ secrets.FLICKR_PHOTOSET_ID }}
+          FLICKR_USER_ID: ${{ secrets.FLICKR_USER_ID }}
 
       - name: Deploy project
         run: aws s3 sync ./dist/ s3://kakkoteemu.fi/film --cache-control="max-age=60" --delete
