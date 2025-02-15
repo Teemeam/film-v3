@@ -1,6 +1,6 @@
 # Film Photo Showcase 3.0
 
-Fetch and show photos from the Flickr API.
+Fetch and display photos from the Flickr API.
 
 ![](sketch.svg)
 
@@ -31,3 +31,21 @@ Fetching images from a private album requires authentication. Obtain the OAuth t
 - Headings: [Calligrapher.ai](https://www.calligrapher.ai/)
 
 - Body: Montserrat ([Fontsource](https://fontsource.org/fonts/montserrat))
+
+## Commands
+
+### pnpm i
+
+Install dependencies.
+
+### pnpm dev
+
+Run the project.
+
+### pnpm build
+
+Build the project.
+
+## Deploy
+
+GitHub workflow handles deploying automatically when pushed. Store your credentials in the repository secrets.
