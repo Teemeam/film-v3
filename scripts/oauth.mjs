@@ -17,8 +17,8 @@ dotenv.config();
 // users will authorize your app to make calls to the api on their behalf.
 // https://www.flickr.com/services/apps/create/apply/?
 
-ok(process.env.FLICKR_CONSUMER_KEY, 'missing CONSUMER_KEY environment variable');
-ok(process.env.FLICKR_CONSUMER_SECRET, 'missing CONSUMER_SECRET environment variable');
+ok(process.env.FLICKR_CONSUMER_KEY, 'missing FLICKR_CONSUMER_KEY environment variable');
+ok(process.env.FLICKR_CONSUMER_SECRET, 'missing FLICKR_CONSUMER_SECRET environment variable');
 
 const consumerKey = process.env.FLICKR_CONSUMER_KEY;
 const consumerSecret = process.env.FLICKR_CONSUMER_SECRET;

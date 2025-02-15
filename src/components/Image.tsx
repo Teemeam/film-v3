@@ -34,7 +34,7 @@ const Image: FC<Props> = ({ data }) => {
   return (
     <div
       ref={imageRef}
-      className='mb-3xl flex flex-col items-center justify-center gap-lg md:flex-row'
+      className='mb-3xl flex flex-col items-center justify-center gap-lg md:flex-row md:gap-xl'
     >
       <div className='relative w-full md:w-7/12'>
         <div

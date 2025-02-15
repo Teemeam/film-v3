@@ -15,14 +15,14 @@ const Menu: FC<Props> = ({ selected, handleClick, handleReset }) => {
     <div className='my-xl w-full text-center'>
       <div className='mx-auto w-11/12'>
         <details>
-          <summary className='mx-auto w-fit cursor-pointer font-montserrat font-medium'>
+          <summary className='mx-auto my-base w-fit cursor-pointer font-montserrat font-medium'>
             Filter
           </summary>
 
           {/**
            * Film buttons
            */}
-          <div className='my-base'>
+          <div className='my-sm'>
             {tags[0]?.map((tag, i) => (
               <MenuButton
                 key={`f-button_${i}`}
@@ -36,7 +36,7 @@ const Menu: FC<Props> = ({ selected, handleClick, handleReset }) => {
           {/**
            * Camera buttons
            */}
-          <div className='my-base'>
+          <div className='my-sm'>
             {tags[1]?.map((tag, i) => (
               <MenuButton
                 key={`c-button_${i}`}
@@ -50,7 +50,7 @@ const Menu: FC<Props> = ({ selected, handleClick, handleReset }) => {
           {/**
            * Reset button
            */}
-          <div className='my-base'>
+          <div className='my-sm'>
             <button
               className='m-1 rounded-lg border-2 border-black px-3 py-1 font-montserrat text-sm'
               onClick={() => handleReset()}

@@ -7,12 +7,10 @@ type Props = {
 const { src, alt } = Astro.props;
 ---
 
-<div class='md:mt-2xl relative mb-xl mt-xl w-full'>
-  <div class='mx-auto w-10/12 max-w-24 sm:max-w-32 md:max-w-40'>
-    <div class='relative h-0 w-full pb-[35.6955229%]'>
-      <h2 class='absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2'>
-        <img class='block w-full' src={src} alt={alt} />
-      </h2>
-    </div>
+<div class='relative mb-xl mt-xl w-full md:mt-2xl'>
+  <div class='relative mx-auto h-9 w-10/12 sm:h-12'>
+    <h2 class='absolute left-1/2 top-1/2 h-full -translate-x-1/2 -translate-y-1/2'>
+      <img class='block h-full' src={src} alt={alt} />
+    </h2>
   </div>
 </div>
