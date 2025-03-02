@@ -1,4 +1,5 @@
 import c330 from '~/assets/cameras/c330.jpg';
+import synchrobox from '~/assets/cameras/synchrobox.jpg';
 import sx70 from '~/assets/cameras/sx70.jpg';
 import vr35 from '~/assets/cameras/vr35.jpg';
 
@@ -16,10 +17,11 @@ const cameras: Camera[] = [
     image: sx70,
   },
   {
-    name: 'Canon AV-1',
+    name: 'Agfa Synchro Box',
+    image: synchrobox,
   },
   {
-    name: 'Agfa Synchro Box',
+    name: 'Canon AV-1',
   },
   {
     name: 'Pingo',
