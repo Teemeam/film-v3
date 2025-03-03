@@ -61,6 +61,11 @@ const tags: MyTag[][] = [
       value: 'hp5plus',
     },
     {
+      name: 'Fujifilm Neopan Acros 100 II',
+      label: 'Neopan Acros 100 II',
+      value: 'acros',
+    },
+    {
       name: 'One Instant Packfilm Type 100 P7 Color',
       label: 'One Instant Type 100 P7 Color',
       value: 'oneinstant',
