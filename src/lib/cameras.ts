@@ -24,6 +24,9 @@ const cameras: Camera[] = [
     name: 'Canon AV-1',
   },
   {
+    name: 'Canon T80',
+  },
+  {
     name: 'Pingo',
   },
 ];
