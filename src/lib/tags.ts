@@ -123,6 +123,11 @@ const tags: MyTag[][] = [
       value: 'av1',
     },
     {
+      name: 'Canon T80',
+      label: 'Canon T80',
+      value: 't80',
+    },
+    {
       name: 'Kodak Brownie No. 2 Cartridge Hawk-Eye Model B',
       label: 'Kodak No. 2 Cartridge Hawk-Eye Model B',
       value: 'brownie',
