@@ -16,6 +16,11 @@ const tags: MyTag[][] = [
       value: '800t',
     },
     {
+      name: 'Cinestill BwXX',
+      label: 'Cinestill BwXX',
+      value: 'bwxx',
+    },
+    {
       name: 'Kodak ColorPlus 200',
       label: 'ColorPlus 200',
       value: 'colorplus200',
