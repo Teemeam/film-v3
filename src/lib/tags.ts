@@ -76,6 +76,11 @@ const tags: MyTag[][] = [
       value: 'oneinstant',
     },
     {
+      name: 'Harman Phoenix II',
+      label: 'Phoenix II',
+      value: 'phoenixii',
+    },
+    {
       name: 'Kodak Portra 160',
       label: 'Portra 160',
       value: 'portra160',
